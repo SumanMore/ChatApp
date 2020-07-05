@@ -9,57 +9,57 @@ import java.io.*;
 public class server  extends JFrame implements ActionListener{
 	
   JPanel p1;
-   JTextField t1;
-   JButton b1;
-   static JTextArea a1;
-    static ServerSocket skt;
-    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
-    
-   
-   
-	server()
-{ 
-    p1=new JPanel();
-    p1.setLayout(null);
-    p1.setBackground(new Color(7,94,84));
-    p1.setBounds(0,0,450,70);
-    add(p1);
-        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/3..jpg"));   
-        Image i2=i1.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
-        ImageIcon i3=new ImageIcon(i2);
-    JLabel l1=new JLabel(i3);
-    l1.setBounds(5,17,30,30);
-    p1.add(l1);
-    l1.addMouseListener(new MouseAdapter(){
-    public void mouseClicked(MouseEvent ae){
-        System.exit(0);
-        
-    }
+  JTextField t1;
+  JButton b1;
+  static JTextArea a1;
+  static ServerSocket skt;
+  static Socket s;
+  static DataInputStream din;
+  static DataOutputStream dout;
+  server()
+  { 
+   p1=new JPanel();
+   p1.setLayout(null);
+   p1.setBackground(new Color(7,94,84));
+   p1.setBounds(0,0,450,70);
+   add(p1);
+	  
+   ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/3..jpg"));   
+   Image i2=i1.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
+   ImageIcon i3=new ImageIcon(i2);
+   JLabel l1=new JLabel(i3);
+   l1.setBounds(5,17,30,30);
+   p1.add(l1);
+   l1.addMouseListener(new MouseAdapter(){
+   public void mouseClicked(MouseEvent ae){
+   System.exit(0);
+   }
 });
     
     ImageIcon i4=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/img1.jpg"));   
-        Image i5=i4.getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT);
-        ImageIcon i6=new ImageIcon(i5);
+    Image i5=i4.getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT);
+    ImageIcon i6=new ImageIcon(i5);
     JLabel l2=new JLabel(i6);
     l2.setBounds(40,5,60,60);
     p1.add(l2);
+	  
     ImageIcon i7=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/video.png"));   
-        Image i8=i7.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
-        ImageIcon i9=new ImageIcon(i8);
+    Image i8=i7.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
+    ImageIcon i9=new ImageIcon(i8);
     JLabel l5=new JLabel(i9);
     l5.setBounds(290,20,30,30);
     p1.add(l5);
+	  
     ImageIcon i10=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/phone.png"));   
-        Image i11=i10.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
-        ImageIcon i12=new ImageIcon(i11);
+    Image i11=i10.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
+    ImageIcon i12=new ImageIcon(i11);
     JLabel l6=new JLabel(i12);
     l6.setBounds(350,20,30,30);
     p1.add(l6);
+	  
     ImageIcon i13=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/3dot.png"));   
-        Image i14=i13.getImage().getScaledInstance(45,45,Image.SCALE_DEFAULT);
-        ImageIcon i15=new ImageIcon(i14);
+    Image i14=i13.getImage().getScaledInstance(45,45,Image.SCALE_DEFAULT);
+    ImageIcon i15=new ImageIcon(i14);
     JLabel l7=new JLabel(i15);
     l7.setBounds(390,20,45,45);
     p1.add(l7);
@@ -94,28 +94,26 @@ public class server  extends JFrame implements ActionListener{
     b1.setBounds(320,655,123,40);
     b1.setBackground( new Color(7,94,84));
     b1.setForeground(Color.WHITE);
-      b1.setFont(new Font("SAN_SERIF",Font.BOLD,16)); 
-      b1.addActionListener(this);
+    b1.setFont(new Font("SAN_SERIF",Font.BOLD,16)); 
+    b1.addActionListener(this);
     add(b1);
         setLayout(null);
 	setSize(450,700);
 	setLocation(400,200);
         setUndecorated(true);
 	setVisible(true);
-	
 }
         public void actionPerformed(ActionEvent ae){
-            try{
+        try{
         String out=t1.getText();
         a1.setText(a1.getText()+"\n\t\t\t"+out);
         dout.writeUTF(out);
         t1.setText("");
-        
+         }
+         catch(Exception e){}
         }
-            catch(Exception e){}
-        }
-public static void main(String args[])
-{
+        public static void main(String args[])
+        {
 	new server().setVisible(true);
         String msginput="";
         try
