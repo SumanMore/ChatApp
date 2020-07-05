@@ -10,52 +10,55 @@ public class client  extends JFrame implements ActionListener{
    JPanel p1;
    JTextField t1;
    JButton b1;
-  static  JTextArea a1;
+   static  JTextArea a1;
    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
+   static DataInputStream din;
+   static DataOutputStream dout;
    
-	client()
-{ 
+    client()
+    { 
     p1=new JPanel();
     p1.setLayout(null);
     p1.setBackground(new Color(7,94,84));
     p1.setBounds(0,0,450,70);
     add(p1);
+	    
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/3..jpg"));   
         Image i2=i1.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
         ImageIcon i3=new ImageIcon(i2);
-    JLabel l1=new JLabel(i3);
-    l1.setBounds(5,17,30,30);
-    p1.add(l1);
-    l1.addMouseListener(new MouseAdapter(){
-    public void mouseClicked(MouseEvent ae){
+        JLabel l1=new JLabel(i3);
+        l1.setBounds(5,17,30,30);
+        p1.add(l1);
+        l1.addMouseListener(new MouseAdapter(){
+        public void mouseClicked(MouseEvent ae){
         System.exit(0);
-        
-    }
+     }
 });
     
     ImageIcon i4=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/x.jpg"));   
-        Image i5=i4.getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT);
-        ImageIcon i6=new ImageIcon(i5);
+    Image i5=i4.getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT);
+    ImageIcon i6=new ImageIcon(i5);
     JLabel l2=new JLabel(i6);
     l2.setBounds(40,5,60,60);
     p1.add(l2);
+	    
     ImageIcon i7=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/video.png"));   
-        Image i8=i7.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
-        ImageIcon i9=new ImageIcon(i8);
+    Image i8=i7.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
+    ImageIcon i9=new ImageIcon(i8);
     JLabel l5=new JLabel(i9);
     l5.setBounds(290,20,30,30);
     p1.add(l5);
+	    
     ImageIcon i10=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/phone.png"));   
-        Image i11=i10.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
-        ImageIcon i12=new ImageIcon(i11);
+    Image i11=i10.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT);
+    ImageIcon i12=new ImageIcon(i11);
     JLabel l6=new JLabel(i12);
     l6.setBounds(350,20,30,30);
     p1.add(l6);
+	    
     ImageIcon i13=new ImageIcon(ClassLoader.getSystemResource("chating/application/icons/3dot.png"));   
-        Image i14=i13.getImage().getScaledInstance(45,45,Image.SCALE_DEFAULT);
-        ImageIcon i15=new ImageIcon(i14);
+    Image i14=i13.getImage().getScaledInstance(45,45,Image.SCALE_DEFAULT);
+    ImageIcon i15=new ImageIcon(i14);
     JLabel l7=new JLabel(i15);
     l7.setBounds(390,20,45,45);
     p1.add(l7);
@@ -99,7 +102,7 @@ public class client  extends JFrame implements ActionListener{
         setUndecorated(true);
 	setVisible(true);
 	
-}
+    }
         public void actionPerformed(ActionEvent ae){
         try{    
         String out=t1.getText();
