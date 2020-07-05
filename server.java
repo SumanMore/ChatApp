@@ -7,8 +7,8 @@ import java.awt.event.*;
 import java.net.*;
 import java.io.*;
 public class server  extends JFrame implements ActionListener{
-   JPanel p1;
-   
+	
+  JPanel p1;
    JTextField t1;
    JButton b1;
    static JTextArea a1;
