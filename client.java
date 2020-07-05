@@ -127,8 +127,7 @@ public static void main(String args[])
                   msginput=din.readUTF();
                a1.setText(a1.getText()+"\n"+msginput);
              }
-            //msginput=din.readUTF();
-             //  a1.setText(a1.getText()+"\n"+msginput);
+            
             
         }catch(Exception e){}
 }
