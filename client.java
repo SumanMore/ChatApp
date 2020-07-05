@@ -8,7 +8,6 @@ import java.net.*;
 import java.io.*;
 public class client  extends JFrame implements ActionListener{
    JPanel p1;
-   
    JTextField t1;
    JButton b1;
   static  JTextArea a1;
